@@ -30,7 +30,7 @@ class Basics {
 
         // 2
         class Alfa {
-            int data = 0;
+            // int data = 0;
         }
         Alfa obj = new Alfa();
         System.out.println(obj);
