@@ -52,7 +52,7 @@ class Basics {
         // length -> 
         //Print array of string by commmand arguments
         for (int i = 0; i < s.length; i++) {
-            System.out.println(s[i]);
+            System.out.println("Command line Output : "+s[i]);
         }
         //Input: java Basics one two three four five
 
