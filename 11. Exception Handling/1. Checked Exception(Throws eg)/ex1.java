@@ -25,7 +25,7 @@ import java.io.*;
 class Main {
     public static void main(String[] args) throws IOException   {
 
-        FileReader file = new FileReader("C:\\Users\\Dell\\OneDrive\\Documents\\Programming Language\\java\\11. Exception Handling\\Checked\\ex1TextFile");
+        FileReader file = new FileReader("C:\\Users\\Dell\\OneDrive\\Documents\\Programming Language\\java\\11. Exception Handling\\Checked Exception(Throws eg)\\ex1TextFile");
 
         BufferedReader fileInput = new BufferedReader(file);
 
