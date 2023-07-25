@@ -1,0 +1,2 @@
+This is a stringZ
+his is a string
