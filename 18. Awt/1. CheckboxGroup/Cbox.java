@@ -32,15 +32,17 @@ public class Cbox implements ItemListener {
     }
 
     public void itemStateChanged(ItemEvent e) {
-        if(){
+        if (c1.getState()) {
             f.setBackground(Color.RED);
         }
 
-        if(){
+        if (c2.getState()) {
             f.setBackground(Color.BLUE);
         }
 
-        
+        if (c3.getState()) {
+            f.dispose();
+        }
     }
 
     public static void main(String[] args) {
