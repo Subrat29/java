@@ -13,14 +13,10 @@ class BL implements ActionListener {
         Button b3 = new Button("3");
         Button b4 = new Button("4");
 
-        // NOTE: In the above code, I removed the line f.setLayout(new BorderLayout(150,
-        // 150)); as it was setting a fixed gap between components, which might have
-        // caused the buttons to be invisible due to insufficient space. Instead, I
-        // reverted to using the default BorderLayout where components are arranged
-        // without explicit gaps.
+        // Both Work
+        f.setLayout(new BorderLayout(150, 150));
+        // f.setLayout(new BorderLayout());
 
-        // f.setLayout(new BorderLayout(150, 150));
-        f.setLayout(new BorderLayout());
 
         f.add(b1, BorderLayout.EAST);
         f.add(b2, BorderLayout.WEST);
