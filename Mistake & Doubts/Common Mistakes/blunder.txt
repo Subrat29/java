@@ -1,0 +1,17 @@
+1) For Compile : javac Ex1.java    
+2) For Run :     java Ex1
+
+In 1. Ex1 is filename
+In 2. Ex1 is class name
+
+
+For e.g - 
+
+save file: Hello.java
+But class name is : Ex1
+
+then Compile: javac Hello.java ---- it creates class file which is 
+Ex1.class
+
+Now run class file which is just created by  :  
+For Run : java Ex1
