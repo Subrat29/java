@@ -11,6 +11,14 @@ public class P
 
         Beta b = new Beta();
         b.show();
+
+        // Gamma P = new Gamma();
+
+        // // display alpha
+        // P.display();
+
+        // // display beta
+        // P.display();
     }
 } 
 
