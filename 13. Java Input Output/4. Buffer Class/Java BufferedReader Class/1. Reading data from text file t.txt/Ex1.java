@@ -9,7 +9,7 @@ public class Ex1 {
 
         int i;
         while ((i = br.read()) != -1) {
-            System.out.println((char) i);
+            System.out.print((char) i);
         }
 
         br.close();
