@@ -10,9 +10,11 @@ public class Q12 {
 
         try {
             FileWriter fw = new FileWriter("t.txt");
+            fw.write(text);
+            fw.close();
+            sc.close();
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
 }
