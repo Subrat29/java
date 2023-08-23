@@ -2,12 +2,13 @@ import java.awt.*;
 import java.awt.event.*;
 
 class Q15 implements ActionListener {
-    Frame f;
+    Frame f, f1;
     Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, plusButton, exitButton, equalButton;
     TextField tf;
 
     Q15() {
         f = new Frame("MyFrame");
+        f1 = new Frame("MyFramsse");
 
         // Buttons
         b0 = new Button("0");
@@ -26,9 +27,22 @@ class Q15 implements ActionListener {
         exitButton = new Button("Exit");
 
         // TextField
+        // tf = new TextField();
+        // // tf.setBackground(Color.red);
+        // tf.setPreferredSize(new Dimension(150, 160));
+        // f.add(tf);
+
+        // Create a panel for TextField
+        Panel textFieldPanel = new Panel();
+        textFieldPanel.setLayout(new FlowLayout(FlowLayout.LEFT)); // Center-align within the panel
+
+        // TextField
         tf = new TextField();
-        tf.setBounds(30, 330, 150, 40);
-        f.add(tf, FlowLayout.LEFT);
+        tf.setPreferredSize(new Dimension(300, 40)); // Set preferred size
+        textFieldPanel.add(tf); // Add TextField to the panel
+
+        // Add the panel to the Frame
+        f.add(textFieldPanel);
 
         f.setLayout(new FlowLayout(FlowLayout.CENTER, 50, 50));
         f.add(b0, FlowLayout.LEFT);
@@ -47,6 +61,8 @@ class Q15 implements ActionListener {
 
         f.setSize(500, 500);
         f.setVisible(true);
+        f1.setVisible(true);
+        f1.setSize(200, 220);
 
         exitButton.addActionListener(this);
     }
