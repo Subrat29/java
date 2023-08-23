@@ -19,7 +19,7 @@ class Myapplet extends Applet implements ActionListener {
 
     public void init() {
         b = new Button("Click");
-        add(b);
+         add(b);
         b.addActionListener(this);
     }
 
