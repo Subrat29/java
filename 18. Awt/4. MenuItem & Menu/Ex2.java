@@ -2,11 +2,11 @@ import java.awt.*;
 import java.awt.Frame;
 import java.awt.event.*;
 
-public class Ex1 implements ActionListener {
+public class Ex2 implements ActionListener {
     // Frame f;
 
-    Ex1() {
-        Frame f = new frame("myframe");
+    Ex2() {
+        Frame f = new Frame("myframe");
         // MenuBar mb = new Menubar();
 
         // Menu menu1 = new Menu("File");
@@ -35,6 +35,6 @@ public class Ex1 implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new Ex1();
+        new Ex2();
     }
 }
