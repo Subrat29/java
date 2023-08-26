@@ -170,7 +170,7 @@ class Q15 implements ActionListener, ItemListener {
                 n1 = Integer.parseInt(tf.getText());
                 tf.setText("");
                 operator = "*";
-                System.out.println(sumit chullad copy krra h);
+                // System.out.println(sumit chullad copy krra h);
             }
         }
 
