@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
 
-
 class Q15 implements ActionListener, ItemListener {
     Frame f;
     Font fo;
@@ -9,7 +8,7 @@ class Q15 implements ActionListener, ItemListener {
     Button plusButton, equalButton, minusButton, multiButton, divideButton, exitButton;
     TextField tf;
 
-    int n1 = 0;
+    double n1 = 0;
     String operator = "";
     boolean clear = false;
 
@@ -20,7 +19,7 @@ class Q15 implements ActionListener, ItemListener {
 
         // Frame
         f = new Frame("MyFrame");
-        f.setBackground(Color.darkGray);
+        f.setBackground(Color.black);
         f.setLayout(new FlowLayout(FlowLayout.CENTER, 50, 50));
         f.setSize(500, 500);
         f.setVisible(true);
@@ -147,7 +146,7 @@ class Q15 implements ActionListener, ItemListener {
         else if (s.equals("+")) {
 
             if (!tf.getText().isEmpty()) {
-                n1 = Integer.parseInt(tf.getText());
+                n1 = Double.parseDouble(tf.getText());
                 tf.setText("");
                 operator = "+";
             }
@@ -157,7 +156,7 @@ class Q15 implements ActionListener, ItemListener {
         else if (s.equals("-")) {
 
             if (!tf.getText().isEmpty()) {
-                n1 = Integer.parseInt(tf.getText());
+                n1 = Double.parseDouble(tf.getText());
                 tf.setText("");
                 operator = "-";
             }
@@ -167,10 +166,9 @@ class Q15 implements ActionListener, ItemListener {
         else if (s.equals("*")) {
 
             if (!tf.getText().isEmpty()) {
-                n1 = Integer.parseInt(tf.getText());
+                n1 = Double.parseDouble(tf.getText());
                 tf.setText("");
                 operator = "*";
-                // System.out.println(sumit chullad copy krra h);
             }
         }
 
@@ -178,7 +176,7 @@ class Q15 implements ActionListener, ItemListener {
         else if (s.equals("/")) {
 
             if (!tf.getText().isEmpty()) {
-                n1 = Integer.parseInt(tf.getText());
+                n1 = Double.parseDouble(tf.getText());
                 tf.setText("");
                 operator = "/";
             }
@@ -188,26 +186,26 @@ class Q15 implements ActionListener, ItemListener {
         else if (s.equals("=")) {
 
             if (!tf.getText().isEmpty()) {
-                int n2 = Integer.parseInt(tf.getText());
+                double n2 = Double.parseDouble(tf.getText());
 
                 switch (operator) {
                     case "+":
-                        tf.setText(Integer.toString(n1 + n2));
+                        tf.setText(Double.toString(n1 + n2));
                         clear = true;
                         break;
 
                     case "-":
-                        tf.setText(Integer.toString(n1 - n2));
+                        tf.setText(Double.toString(n1 - n2));
                         clear = true;
                         break;
 
                     case "*":
-                        tf.setText(Integer.toString(n1 * n2));
+                        tf.setText(Double.toString(n1 * n2));
                         clear = true;
                         break;
 
                     case "/":
-                        tf.setText(Integer.toString(n1 / n2));
+                        tf.setText(Double.toString(n1 / n2));
                         clear = true;
                         break;
                 }
