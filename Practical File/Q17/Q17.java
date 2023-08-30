@@ -11,6 +11,7 @@ class Q17 implements ActionListener {
     Q17() {
         // Frame
         f = new JFrame("Notepad");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Menubar
         JMenuBar mb = new JMenuBar();
@@ -63,10 +64,7 @@ class Q17 implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String s = e.getActionCommand();
 
-        if (s.equals("Exit")) {
-            f.dispose();
-        }
-
+        // Open
         if (s.equals("Open")) {
 
             int returnValue = fileChooser.showOpenDialog(f);
@@ -89,6 +87,26 @@ class Q17 implements ActionListener {
                     ex.printStackTrace();
                 }
             }
+        }
+
+        // Save
+        if (s.equals("Save")) {
+            int returnValue = fileChooser.showSaveDialog(f);
+
+            if (returnValue == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = fileChooser.getSelectedFile();
+
+                try (FileWriter writer = new FileWriter(selectedFile)) {
+                    writer.write(textArea.getText());
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+
+        // Exit
+        if (s.equals("Exit")) {
+            f.dispose();
         }
 
     }
