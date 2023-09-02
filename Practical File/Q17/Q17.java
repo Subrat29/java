@@ -104,6 +104,11 @@ class Q17 implements ActionListener {
             }
         }
 
+        // Cut
+        if (s.equals("Cut")) {
+            
+        }
+
         // Exit
         if (s.equals("Exit")) {
             f.dispose();
