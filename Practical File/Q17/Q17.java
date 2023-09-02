@@ -7,8 +7,26 @@ class Q17 implements ActionListener {
     JFrame f;
     JFileChooser fileChooser;
     JTextArea textArea;
+    String selectedText;
+    Font f1, f2, f3, f4, f5;
+    Color lightBlue, lightGreen, lightGray, cream, lavender;
 
     Q17() {
+
+        // Font
+        f1 = new Font("Arial", Font.PLAIN, 14);
+        f2 = new Font("Helvetica", Font.BOLD, 18);
+        f3 = new Font("Courier New", Font.ITALIC, 16);
+        f4 = new Font("Georgia", Font.PLAIN, 20);
+        f5 = new Font("Impact", Font.BOLD, 24);
+
+        // Color
+        lightBlue = new Color(173, 216, 230);
+        lightGreen = new Color(144, 238, 144);
+        lightGray = new Color(211, 211, 211);
+        cream = new Color(255, 253, 208);
+        lavender = new Color(230, 230, 250);
+
         // Frame
         f = new JFrame("Notepad");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,6 +46,23 @@ class Q17 implements ActionListener {
         JMenuItem m22 = new JMenuItem("Copy");
         JMenuItem m23 = new JMenuItem("Paste");
 
+        // Menu3 - Menu inside menu
+        JMenu menu3 = new JMenu("View");
+
+        JMenu fontMenu = new JMenu("Font");
+        JMenuItem font1 = new JMenuItem("Font1");
+        JMenuItem font2 = new JMenuItem("Font2");
+        JMenuItem font3 = new JMenuItem("Font3");
+        JMenuItem font4 = new JMenuItem("Font4");
+        JMenuItem font5 = new JMenuItem("Font5");
+
+        JMenu textAreaColor = new JMenu("TextArea Color");
+        JMenuItem blue = new JMenuItem("lightBlue");
+        JMenuItem green = new JMenuItem("lightGreen");
+        JMenuItem gray = new JMenuItem("lightGray");
+        JMenuItem cream = new JMenuItem("cream");
+        JMenuItem lavender = new JMenuItem("lavender");
+
         menu1.add(m11);
         menu1.add(m12);
         menu1.add(m13);
@@ -36,8 +71,24 @@ class Q17 implements ActionListener {
         menu2.add(m22);
         menu2.add(m23);
 
+        menu3.add(fontMenu);
+        menu3.add(textAreaColor);
+
+        fontMenu.add(font1);
+        fontMenu.add(font2);
+        fontMenu.add(font3);
+        fontMenu.add(font4);
+        fontMenu.add(font5);
+
+        textAreaColor.add(blue);
+        textAreaColor.add(green);
+        textAreaColor.add(gray);
+        textAreaColor.add(cream);
+        textAreaColor.add(lavender);
+
         mb.add(menu1);
         mb.add(menu2);
+        mb.add(menu3);
 
         f.setJMenuBar(mb);
         f.setLayout(new BorderLayout());
@@ -55,10 +106,22 @@ class Q17 implements ActionListener {
         m11.addActionListener(this);
         m12.addActionListener(this);
         m13.addActionListener(this);
+
         m21.addActionListener(this);
         m22.addActionListener(this);
         m23.addActionListener(this);
 
+        font1.addActionListener(this);
+        font2.addActionListener(this);
+        font3.addActionListener(this);
+        font4.addActionListener(this);
+        font5.addActionListener(this);
+
+        blue.addActionListener(this);
+        green.addActionListener(this);
+        gray.addActionListener(this);
+        cream.addActionListener(this);
+        lavender.addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -106,14 +169,49 @@ class Q17 implements ActionListener {
 
         // Cut
         if (s.equals("Cut")) {
-            
+            textArea.cut();
+        }
+
+        // Copy
+        if (s.equals("Copy")) {
+            textArea.copy();
+        }
+
+        // Paste
+        if (s.equals("Paste")) {
+            textArea.paste();
+        }
+
+        // TextArea Font
+        if (s.equals("Font1")) {
+            textArea.setFont(f1);
+        } else if (s.equals("Font2")) {
+            textArea.setFont(f2);
+        } else if (s.equals("Font3")) {
+            textArea.setFont(f3);
+        } else if (s.equals("Font4")) {
+            textArea.setFont(f4);
+        } else if (s.equals("Font5")) {
+            textArea.setFont(f5);
+        }
+
+        // TextArea Color
+        if (s.equals("lightBlue")) {
+            textArea.setBackground(lightBlue);
+        } else if (s.equals("lightGreen")) {
+            textArea.setBackground(lightGreen);
+        } else if (s.equals("lightGray")) {
+            textArea.setBackground(lightGray);
+        } else if (s.equals("cream")) {
+            textArea.setBackground(cream);
+        } else if (s.equals("lavender")) {
+            textArea.setBackground(lavender);
         }
 
         // Exit
         if (s.equals("Exit")) {
             f.dispose();
         }
-
     }
 
     public static void main(String[] args) {

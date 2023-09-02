@@ -1,34 +1,33 @@
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-class SelectedTextExample {
+
+class NestedMenuExample {
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Selected Text Example");
+        JFrame frame = new JFrame("Nested Menu Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300, 200);
+        JMenuBar menuBar = new JMenuBar();
 
-        JTextArea textArea = new JTextArea("This is a sample text area.");
-        textArea.setLineWrap(true);
-        textArea.setWrapStyleWord(true);
+        JMenu fileMenu = new JMenu("File");
+        JMenu subMenu = new JMenu("Sub Menu");
 
-        JButton retrieveButton = new JButton("Retrieve Selected Text");
+        JMenuItem newItem = new JMenuItem("New");
+        JMenuItem openItem = new JMenuItem("Open");
+        JMenuItem saveItem = new JMenuItem("Save");
+        JMenuItem subMenuItem1 = new JMenuItem("Sub Menu Item 1");
+        JMenuItem subMenuItem2 = new JMenuItem("Sub Menu Item 2");
 
-        retrieveButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String selectedText = textArea.getSelectedText();
-                if (selectedText != null) {
-                    JOptionPane.showMessageDialog(frame, "Selected Text: " + selectedText);
-                } else {
-                    JOptionPane.showMessageDialog(frame, "No text selected.");
-                }
-            }
-        });
+        subMenu.add(subMenuItem1);
+        subMenu.add(subMenuItem2);
 
-        JPanel panel = new JPanel();
-        panel.add(retrieveButton);
+        fileMenu.add(newItem);
+        fileMenu.add(openItem);
+        fileMenu.addSeparator(); // Add a separator line
+        fileMenu.add(subMenu); // Add the sub-menu
+        fileMenu.add(saveItem);
 
-        frame.add(textArea, BorderLayout.CENTER);
-        frame.add(panel, BorderLayout.SOUTH);
+        menuBar.add(fileMenu);
+
+        frame.setJMenuBar(menuBar);
+        frame.setSize(400, 300);
         frame.setVisible(true);
     }
 }
